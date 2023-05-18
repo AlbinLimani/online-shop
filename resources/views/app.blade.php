@@ -14,6 +14,6 @@
 <body>
 	<div id="app"></div>
 
-	@vite('resources/js/app.js')
+	@vite(['resources/js/app.js', 'resources/js/admin/scss/vertical-layout-light/style.scss'])
 </body>
 </html>
