@@ -60,7 +60,6 @@ class ProductController extends Controller
     public function update(Request $request, Product $product): JsonResponse
     {
         $product -> fill($request -> post()) -> save();
-
         return response() -> json([
             'message' => 'Product Updated Successfully!',
             'product' => $product

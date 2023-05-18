@@ -22,10 +22,11 @@
 </template>
 
 <script>
-import axios from "axios";
+
+import ProductService from "../Services/ProductService";
 
 export default {
-    name: "Add",
+    name: "Products",
     data() {
         return {
             products: []
@@ -36,11 +37,10 @@ export default {
     },
     methods: {
         async getProducts() {
-            this.products = (await axios.get("http://localhost:8000/api/admin/products")).data;
+            this.products = await ProductService.getProducts();
             console.log(this.products)
         }
     }
-
 }
 </script>
 
