@@ -48,18 +48,22 @@ export default {
             products: []
         }
     },
-    mounted() {
-        this.getProducts()
+    async mounted() {
+        this.products = await ProductService.getProducts()
     },
     methods: {
-        async getProducts() {
-            this.products = await ProductService.getProducts();
-            console.log(this.products)
-        }
+
     }
 }
 </script>
 
 <style scoped>
+.table th,
+table td {
+  white-space: normal;
+}
 
+.table_desc {
+  width: 500px;
+}
 </style>
